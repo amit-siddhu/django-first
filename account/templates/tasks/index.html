@@ -1,0 +1,12 @@
+{% load staticfiles %}
+
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" /> -->
+{% if task_list %}
+    <ul>
+    {% for task in task_list %}
+        <li><a href="/account/tasks/{{task.id}}/details/">{{ task.task_name }}</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="/account/tasks/{{task.id}}/run/">Run</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks are available.</p>
+{% endif %}
